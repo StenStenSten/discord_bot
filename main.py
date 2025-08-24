@@ -32,6 +32,15 @@ async def on_message(message):
         joke = get_joke()
         await message.channel.send(joke)
 
+    if message.content.startswith('!help'):
+        help_message = (
+            "Here are the commands you can use:\n"
+            "!hello - Greet the bot\n"
+            "!joke - Get a random joke\n"
+            "!help - Show this help message"
+        )
+    await message.channel.send(help_message)
+
 
 def get_joke():
     url = "https://icanhazdadjoke.com/"
